@@ -1,11 +1,25 @@
 1 - Código Morse - CODIGOMORSEEHFACILDERECONHECER
+	https://morsecode.scphillips.com/translator.html
+	
 2 - Hexadecimal - ASCII code is old, but still widely used. However, the next two phrases are older than ASCII!
+	http://www.unit-conversion.info/texttools/hexadecimal/
 3 -
+
 4 - Baudot Murray Code - teleprinter code was used in communications before the advent of computers
+	https://cryptii.com/ita2/text
 5 - 
+
 6 - Cifra de Caesar - THIS IS THE ONLY LINE THAT REALLY USES CRYPTOGRAPHY
+	http://www.dcode.fr/caesar-cipher
 7 -
+
 8 - Klingon - A vingança é um prato que se come frio.
+	https://en.wikiquote.org/wiki/Klingon_proverbs
+	
 9 -
+
 10 - QR Code - Identify and read QR code is easy, but now you must decode this: 43 6f 64 65 73 20 77 69 74 68 6f 75 74 20 61 20 73 65 63 72 65 74 20 6b 65 79 20 63 61 6e 20 62 65 20 65 61 73 69 6c 79 20 64 65 63 6f 64 65 64 20 69 66 20 79 6f 75 20 6b 6e 6f 77 20 74 68 65 20 65 6e 63 6f 64 69 6e 67 20 70 72 6f 63 65 73 73 2e
+	https://webqr.com/
+	
 10.2 - Hexadecimal - Codes without a secret key can be easily decoded if you know the encoding process.
+	http://www.unit-conversion.info/texttools/hexadecimal/
