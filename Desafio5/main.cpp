@@ -39,7 +39,7 @@ bool isAsc(string &decryptedtext){
 }
 
 // desafio, proximo, texto
-bool temPalavra(string &p1, string &p2, string &p3, string &texto){
+bool temPalavra(string p1, string p2, string p3, string texto){
 
     std::size_t found = texto.find(p1);
     if (found!=std::string::npos){
