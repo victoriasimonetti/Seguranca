@@ -17,8 +17,10 @@ def isAscii(text):
 		
 def decText(key, cyphertext):
 	obj = AES.new(key, AES.MODE_ECB)
-	res = obj.decrypt(codecs.decode(cyphertext, 'hex_codec'))
+	res = isAscii(obj.decrypt(codecs.decode(cyphertext, 'hex_codec')))
 	if res:
+		print ("É ASC - Chave: " + codecs.decode(key, "utf-8") + "\n")  
+		print ("Texto que só tem asc:S " + cyphertext)
 		to_find = re.compile("criptografia|sexto|desafio")
 		if to_find.search(res):
 			print ("Achou! Chave: " + codecs.decode(key, "utf-8") + "\n") 
