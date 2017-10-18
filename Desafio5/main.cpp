@@ -28,7 +28,7 @@ using CryptoPP::AES;
 #include "modes.h"
 using CryptoPP::ECB_Mode;
 
-bool isAsc(string &decryptedtext){
+/*bool isAsc(string &decryptedtext){
 
     for(int i=0; i< decryptedtext.size(); i++){
         if(decryptedtext[i] < 32){
@@ -36,9 +36,9 @@ bool isAsc(string &decryptedtext){
         }         
     }
     return true;
-}
+}*/
 
-// desafio, proximo, texto
+// desafio, proximo, sexto
 bool temPalavra(string p1, string p2, string p3, string texto){
 
     std::size_t found = texto.find(p1);
@@ -55,7 +55,7 @@ bool temPalavra(string p1, string p2, string p3, string texto){
 
     found = texto.find(p3);
     if (found!=std::string::npos){
-        cout << "verificando texto..." << endl;
+        cout << "verificando sexto..." << endl;
         return true;
     }
 
@@ -71,7 +71,7 @@ string teste(string &key_s) {
     for (int i = 0; i < key_s.size(); i++)
         key[i] = (byte) key_s[i];
 
-   string ciphertext = "83D0FA6F5B690E57C0F090573F473CD4\n58862A9C23AF0F3C3B91D05A3E3CC9F7\n24AE443EA022EFBB4FBC4E513304C3A3\n13D7F041E4CB5102C987633DA40B3DF1\nEC1A904DC0B26D8644B2C9FED8C0B85C\n86EE4557F03BC893E281720978512D8F\nFDFB2E1B79AC1F52F5EDE15F72249D03\nBE8557A5DF715E29E78CF743C038EFE1\n51E091DC80225AE86E0D8E54F48C9624\nF5889CB3852D83547E4848E78EB26A42\n9C631FA9BA6371D2BD1B7EA4BF950F91\nC16E524554F4C4EE389E75B4E42310F5\n6519D432C302D7D7A3BA2688E0B1E257\n4868ECF9DB0240105B1847433FA9B6B2\n7E48958CF0473FB9E1AB2F078B30F8C9\n83DA8AC47ECB828BBADCD1ED410198C3\n131D23D3951B15F85737C65D1B775F4D\nCD6709D461A58CA250A69075E722C225\nE2B826CC5F8F1B6C65ABE2B52915C9BB\n839B2153DC38959B8E96483969921220\n1C73D26D6ED4F104B63470F271C4AA9D";
+   string ciphertext = "83D0FA6F5B690E57C0F090573F473CD458862A9C23AF0F3C3B91D05A3E3CC9F724AE443EA022EFBB4FBC4E513304C3A313D7F041E4CB5102C987633DA40B3DF1EC1A904DC0B26D8644B2C9FED8C0B85C86EE4557F03BC893E281720978512D8FFDFB2E1B79AC1F52F5EDE15F72249D03BE8557A5DF715E29E78CF743C038EFE151E091DC80225AE86E0D8E54F48C9624F5889CB3852D83547E4848E78EB26A429C631FA9BA6371D2BD1B7EA4BF950F91C16E524554F4C4EE389E75B4E42310F56519D432C302D7D7A3BA2688E0B1E2574868ECF9DB0240105B1847433FA9B6B27E48958CF0473FB9E1AB2F078B30F8C983DA8AC47ECB828BBADCD1ED410198C3131D23D3951B15F85737C65D1B775F4DCD6709D461A58CA250A69075E722C225E2B826CC5F8F1B6C65ABE2B52915C9BB839B2153DC38959B8E964839699212201C73D26D6ED4F104B63470F271C4AA9D";
    //string ciphertext = "A506A19333F306AC2C62CBE931963AE7";
    ECB_Mode< AES >::Decryption decryptor;
                             decryptor.SetKey(key, sizeof(key));
@@ -97,12 +97,12 @@ int main(int argc, char* argv[]){
     string texto_claro;
 
 
-    for(int a=33; a<=126; a++){
-        for(int b=33; b<=126; b++){
+    for(int a=126; a>=33; a--){
+        for(int b=126; b>=33; b--){
             cout << "Processando: " << a << "/126 " << b << "/126" << endl;
-            for(int c=33; c<=126; c++){
-                for(int d=33; d<=126; d++){
-                    for(int e=33; e<=126; e++){
+            for(int c=126; c>=33; c--){
+                for(int d=126; d>=33; d--){
+                    for(int e=126; e>=33; e--){
                         try{
                        
                             key_s = "Key2Group05";
@@ -116,19 +116,20 @@ int main(int argc, char* argv[]){
 
                            int flag = 0;
 
-                            if(isAsc(decryptedtext) == true){
+                            /*if(isAsc(decryptedtext) == true){
                                 flag = 1;  
                                 cout << "só tem asc..." << endl;
+                                cout << "Chave: " << key_s << endl;
                                 cout << "Texto claro: " << decryptedtext << endl;  
-                            }                            
+                            } */                           
 
-                            if(flag == 1){
-                                if(temPalavra("desafio", "proximo", "sexto", decryptedtext)==true){
-                                    cout << "acheii" << endl;
+                           // if(flag == 1){
+                                if(temPalavra("desafio", "criptografia", "sexto", decryptedtext)==true){
+                                    cout << "Chave: " << key_s << endl;
                                     cout << "Texto claro: " << decryptedtext << endl;
                                     return 0;
                                 }                     
-                            }
+                           // }
 
                            
 
